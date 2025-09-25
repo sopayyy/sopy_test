@@ -1,4 +1,4 @@
-name: Playwright CI
+name: Run Playwright test CI
 on: [push, pull_request]
 jobs:
   test:
@@ -9,7 +9,7 @@ jobs:
         with: { node-version: '20' }
       - run: npm ci
       - run: npx playwright install --with-deps
-      - run: npx playwright test
+      - run: xvfb-run -a npx playwright test
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
