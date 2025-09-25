@@ -5,34 +5,7 @@ The tests validate game functionality such as starting, pausing, scoring, and ga
 
 ---
 
-## 📋 Features
-
-- **Playwright + TypeScript** test framework  
-- **Page Object Model (POM)** for maintainability  
-- **Object Repository** for selectors  
-- **Deterministic scoring tests** (using `Math.random` override)  
-- **Smoke tests** (UI sanity, movement, canvas change)  
-- **Pause / Resume tests** (assert canvas freezes then continues)  
-- **Reset tests** (reset to initial state)  
-- **Game Over tests** (snake collides and ends game)  
-- Test logs include **score changes** for easy debugging  
-
----
-
-## 📂 Project Structure
-sopy_test/
-├── playwright.config.ts
-├── src/
-│ ├── pages/
-│ ├── tests/
-│ └── utils/
-├── .gitignore
-├── package.json
-└── README.md
-
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 ```bash
