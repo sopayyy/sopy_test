@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "https://github.com/josephvouch/vouch_snake test functionality",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sopayyy/sopy_test.git"
@@ -20,6 +25,10 @@
   "devDependencies": {
     "@playwright/test": "^1.55.1",
     "@types/node": "^24.5.2",
-    "dotenv": "^17.2.2"
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "dotenv": "^17.2.2",
+    "eslint": "^9.36.0",
+    "prettier": "^3.6.2"
   }
 }
