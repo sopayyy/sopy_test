@@ -4,9 +4,9 @@ import { waitForCanvasChange } from '../utils/canvas';
 import { warmupDrive } from '../utils/keyboard';
 
 test.describe.configure({ mode: 'serial' });
-test.describe('SMOKE | Snake Game basic checks', () => {
 
-  test('UI awal valid + Start game bisa jalan', async ({ page }) => {
+test.describe('SMOKE | Snake Game basic checks', () => {
+  test('Initial UI state is correct and the game can start', async ({ page }) => {
     // Arrange
     const snake = new SnakeGamePage(page);
     await snake.goto();
@@ -23,26 +23,26 @@ test.describe('SMOKE | Snake Game basic checks', () => {
     await snake.focusCanvas();
     await warmupDrive(page);
 
-    // Assert canvas benar-benar berubah
+    // Assert canvas updates
     await snake.expectCanvasToChangeEventually({ minDelta: 5, maxWaitMs: 2500 });
 
-    // Assert score tidak error
+    // Assert score is valid
     const score = await snake.getScore();
     console.log(`Score saat mulai: ${score}`);
     expect(score).toBeGreaterThanOrEqual(0);
   });
 
-  test('Canvas berubah setelah snake digerakkan (minimal check)', async ({ page }) => {
+  test('Canvas updates after the snake moves (basic check)', async ({ page }) => {
     // Arrange
     const snake = new SnakeGamePage(page);
     await snake.goto();
     await snake.startGame();
     await snake.focusCanvas();
 
-    // Act: beberapa langkah, bukan satu tap
+    // Act: move a few steps, not just one tap
     await warmupDrive(page);
 
-    // Assert: gunakan helper retry
+    // Assert: use helper retry to confirm canvas change
     const changed = await waitForCanvasChange(page, {
       selector: '#gameCanvas',
       timeoutMs: 3000,

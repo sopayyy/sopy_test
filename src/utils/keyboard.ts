@@ -16,11 +16,8 @@ export async function drive(page: Page, seq: Dir[], stepDelay = 100) {
 export async function warmupDrive(page: Page) {
   // short deterministic movements
   await page.keyboard.press('ArrowRight');
-  await page.waitForTimeout(120);
   await page.keyboard.press('ArrowDown');
-  await page.waitForTimeout(120);
   await page.keyboard.press('ArrowLeft');
-  await page.waitForTimeout(120);
 }
 
 export async function step(page: Page, d: Dir, ms = 110) {
