@@ -8,6 +8,6 @@ blob-report/
 playwright/.cache/
 playwright/.auth/
 
-# OS junk
+# system junk
 .DS_Store
 Thumbs.db
