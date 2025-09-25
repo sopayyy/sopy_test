@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# Playwright artifacts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
+# OS junk
+.DS_Store
+Thumbs.db

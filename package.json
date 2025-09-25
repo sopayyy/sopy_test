@@ -1,0 +1,25 @@
+{
+  "name": "sopy_test",
+  "version": "1.0.0",
+  "description": "https://github.com/josephvouch/vouch_snake test functionality",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sopayyy/sopy_test.git"
+  },
+  "author": "sopayy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sopayyy/sopy_test/issues"
+  },
+  "homepage": "https://github.com/sopayyy/sopy_test#readme",
+  "dependencies": {
+    "playwright": "^1.55.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2",
+    "dotenv": "^17.2.2"
+  }
+}
