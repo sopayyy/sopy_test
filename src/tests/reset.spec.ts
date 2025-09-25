@@ -1,20 +1,13 @@
-import { test, expect } from '@playwright/test';
-import { SnakeGamePage } from '../pages/SnakeGamePage';
+import { test, expect } from './fixtures';
 
-test('RESET | Reset sets score to 0 and hides Game Over panel', async ({ page }) => {
-  // Arrange
-  const snake = new SnakeGamePage(page);
-  await snake.goto();
-  await snake.startGame();
-  await snake.focusCanvas();
-
+test('RESET | Reset sets score to 0 and hides Game Over panel', async ({ game, page }) => {
   // Act: play a bit, then reset
   await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(500);
-  await snake.resetGame();
+  await game.reset.click();
 
   // Assert
-  const score = await snake.getScore();
+  const score = await game.getScore();
   expect(score).toBe(0);
-  await expect(snake.gameOver).toBeHidden();
+  await expect(game.gameOver).toBeHidden();
 });
